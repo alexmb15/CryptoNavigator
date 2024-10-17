@@ -1,0 +1,77 @@
+import { useAccount } from 'wagmi';
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import { formatBalance } from "../../../utils/helpers";
+import {getTokensInfo} from "../../../redux/portfolio-reducer";
+import { useDispatch, useSelector } from "react-redux";
+import {getTokensInfoSelector} from "../../../redux/selectors/portfolio-selectors";
+import {AppDispatch} from "../../../redux/redux-store";
+
+
+
+const TokensPage: React.FC = () => {
+    const { address, chain } = useAccount();
+    const tokenBalances = useSelector(getTokensInfoSelector);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+    const dispatch = useDispatch<AppDispatch>();
+
+    const loadTokenBalances = useCallback(async () => {
+        if (!address || !chain) return;
+
+        setIsLoading(true);
+        setError(null);
+
+        try {
+            dispatch(getTokensInfo(address, chain.id));
+        } catch (error) {
+            if (error instanceof Error) {
+                setError(`Failed to load token balances: ${error.message}`);
+            } else {
+                setError('Failed to load token balances due to an unknown error.');
+            }
+        } finally {
+            setIsLoading(false);
+        }
+    }, [address, chain, dispatch]);
+
+    useEffect(() => {
+        console.log("Token render");
+        loadTokenBalances();
+    }, [loadTokenBalances]);
+
+    const renderTokenBalances = useMemo(() => {
+        if (isLoading) return <div>Loading...</div>;
+        if (error) return <div>Error: {error}</div>;
+
+        console.log("tokenBalances:", tokenBalances);
+        if (!Array.isArray(tokenBalances) || tokenBalances.length === 0) {
+            return <div>No tokens available.</div>;
+        }
+
+        return (
+            <ul>
+                {tokenBalances.map((token) => (
+                    <li key={token.contractAddress} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <img
+                            src={token.logo || "/placeholder.png"}
+                            alt={`${token.symbol} logo`}
+                            width={32}
+                            height={32}
+                            style={{ borderRadius: '50%' }}
+                        />
+                        {token.symbol}: {formatBalance(token.tokenBalance, token.decimals, 4)}
+                    </li>
+                ))}
+            </ul>
+        );
+    }, [isLoading, error, tokenBalances]);
+
+    return (
+        <div>
+            <h1>Token Balances</h1>
+            {renderTokenBalances}
+        </div>
+    );
+}
+
+export default TokensPage;

@@ -1,0 +1,28 @@
+2024-10-16T18:10:40.567Z [INFO]: Connected to MongoDB
+2024-10-16T18:10:40.600Z [INFO]: Database already populated, skipping initial coin list creation.
+2024-10-16T18:10:40.601Z [INFO]: Starting updateCoinPrices task
+2024-10-16T18:10:40.605Z [INFO]: Server running on port 53080
+2024-10-16T18:23:33.069Z [INFO]: Coin prices updated in the database. Total updated records: 5023
+2024-10-16T18:23:33.071Z [INFO]: Finished updateCoinPrices task
+2024-10-16T18:23:33.071Z [INFO]: Starting checkForNewCoins task
+2024-10-16T18:23:33.108Z [WARN]: Error 429. Retrying in 1734.7972260637557ms... (Attempt 1 of 10)
+2024-10-16T18:23:34.874Z [WARN]: Error 429. Retrying in 2605.5131754068793ms... (Attempt 2 of 10)
+2024-10-16T18:23:37.509Z [WARN]: Error 429. Retrying in 4048.90670422986ms... (Attempt 3 of 10)
+2024-10-16T18:23:41.599Z [WARN]: Error 429. Retrying in 8770.367660882275ms... (Attempt 4 of 10)
+2024-10-16T18:23:50.513Z [WARN]: Error 429. Retrying in 16067.14902469548ms... (Attempt 5 of 10)
+2024-10-16T18:24:06.659Z [WARN]: Error 429. Retrying in 32017.763950182107ms... (Attempt 6 of 10)
+2024-10-16T18:24:39.724Z [INFO]: No new coins found
+2024-10-16T18:24:39.725Z [INFO]: Finished checkForNewCoins task
+2024-10-16T18:24:39.725Z [INFO]: Starting updateCoinPrices task
+2024-10-16T18:37:32.381Z [INFO]: Coin prices updated in the database. Total updated records: 4984
+2024-10-16T18:37:32.382Z [INFO]: Finished updateCoinPrices task
+2024-10-16T18:37:32.382Z [INFO]: Starting checkForNewCoins task
+2024-10-16T18:37:32.411Z [WARN]: Error 429. Retrying in 1790.7253353922915ms... (Attempt 1 of 10)
+2024-10-16T18:37:34.256Z [WARN]: Error 429. Retrying in 2580.3252879714046ms... (Attempt 2 of 10)
+2024-10-16T18:37:36.878Z [WARN]: Error 429. Retrying in 4075.6953124002903ms... (Attempt 3 of 10)
+2024-10-16T18:37:40.997Z [WARN]: Error 429. Retrying in 8864.287895472993ms... (Attempt 4 of 10)
+2024-10-16T18:37:49.956Z [WARN]: Error 429. Retrying in 16139.82462040952ms... (Attempt 5 of 10)
+2024-10-16T18:38:06.176Z [WARN]: Error 429. Retrying in 32878.08848836065ms... (Attempt 6 of 10)
+2024-10-16T18:38:40.388Z [INFO]: No new coins found
+2024-10-16T18:38:40.389Z [INFO]: Finished checkForNewCoins task
+2024-10-16T18:38:40.390Z [INFO]: Starting updateCoinPrices task
