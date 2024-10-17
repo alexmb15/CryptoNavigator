@@ -49,7 +49,7 @@ This backend service provides an API to retrieve the price of a cryptocurrency b
     Add the following environment variables to the `.env` file:
     ```env
     MONGO_URI=mongodb://localhost:27017/coingeckoDB
-    PORT=3000
+    PORT=53080
     VS_CURRENCY=usd
     ```
 
