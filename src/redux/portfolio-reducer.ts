@@ -3,7 +3,7 @@ import {Address} from "viem";
 import {fetchTokenBalances, TokenBalancesWithMetadata} from "../api/alchemyAPI";
 import fetchCoinData from "../api/navigatorDB_API";
 
-let initialState = {
+const initialState = {
     address: undefined as Address | undefined,
     tokens: [] as Array<TokenBalancesWithMetadata>,
     nfts: [],
@@ -39,21 +39,17 @@ export const getTokensInfo = (address: Address, chainId: number): ThunkType => {
 
         const tokenBalancesWithMetadata = await Promise.all(
             nonZeroBalances.map(async (token) => {
-                //fetchTokenDataFromCoinMarketCap(token.contractAddress, chainId);
-                //const metadata = await fetchTokenMetadata(token.contractAddress, chainId);
                 const metadata = await fetchCoinData(token.contractAddress, chainId);
 
-                if (metadata?.error === "Coin not found") {
-                    return null;
-                }
+                if (!metadata) return null
 
                 return {
                     ...token,
                     symbol: metadata?.symbol || "Unknown",
                     name: metadata?.name || "Unknown Token",
                     decimals: metadata?.decimals || 18,
-                    logo: metadata?.logo || null,
-                    price: metadata?.price || 0,
+                    logo: metadata?.logoURI || null,
+                    price: 0,
                 };
             })
         );

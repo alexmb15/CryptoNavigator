@@ -3,7 +3,7 @@ import {Action, combineReducers} from "redux";
 import {configureStore} from "@reduxjs/toolkit";
 import portfolioReducer from "./portfolio-reducer";
 
-let rootReducer = combineReducers({
+const rootReducer = combineReducers({
     tokensPage: portfolioReducer
 })
 const store = configureStore({

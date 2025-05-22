@@ -17,13 +17,13 @@ CryptoNavigator is a web application designed to provide users with tools for na
 - **Backend**: Node.js, Express
 - **Database**: MongoDB
 - **State Management**: Redux
-- **Styling**: CSS, Bootstrap, CSS Modules
+- **Styling**: CSS
 
 ## Project Structure
 
 ### Frontend (`/src`)
 - **`/components`**: Contains reusable UI components such as `BridgePage`, `Header`, `Navbar`, `PortfolioPage`, and various subcomponents for managing tokens, transactions, NFTs, and settings.
-- **`/api`**: Contains modules that interact with external cryptocurrency services like Alchemy, CoinGecko, and CoinMarketCap.
+- **`/api`**: Contains modules that interact with external cryptocurrency services like Alchemy.
 - **`/context`**: Implements the Web3 context to manage blockchain interactions and user session data.
 - **`/redux`**: Includes reducers, store configuration, and selectors for managing portfolio state.
 - **`/public`**: Contains static assets such as icons and the main HTML template.
@@ -31,12 +31,11 @@ CryptoNavigator is a web application designed to provide users with tools for na
 ### Backend (`/backend`)
 - **`/src`**: Contains server-side code for handling requests, managing data, and serving API endpoints.
   - **Controllers**: Handle incoming API requests (e.g., `coinController.js`).
-  - **Routes**: Define API routes (e.g., `coinRoutes.js`, `tokenRoutes.js`).
-  - **Models**: Define MongoDB schemas for `Coin` and `Tokens`.
+  - **Routes**: Define API routes (e.g., `tokenRouter.ts`).
+  - **Models**: Define MongoDB schemas for `Tokens`.
   - **Services**: Contain business logic for data processing (`coinService.js`).
   - **Utils**: Include utility functions like logging (`logger.js`).
-  - **Tasks**: Handle database setup and background tasks (`setupDatabase.js`, `startDatabaseTasks.js`).
-- **`/scripts`**: Scripts for initial data setup and periodic updates (e.g., `createInitialCoinList.js`, `updateCoinPrices.js`).
+
 
 ## Getting Started
 

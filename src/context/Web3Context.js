@@ -3,14 +3,10 @@ import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { createConfig, http, WagmiProvider } from 'wagmi';
 import {
     mainnet,
-    sepolia,
+    bsc,
     polygon,
     arbitrum,
-    optimism,
-    avalanche,
-    fantom,
-    gnosis,
-    bsc
+    optimism
 } from 'wagmi/chains';
 import { metaMask } from 'wagmi/connectors';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -19,14 +15,10 @@ const queryClient = new QueryClient();
 
 const chains = [
     mainnet,
-    sepolia,
+    bsc,
     polygon,
     arbitrum,
-    optimism,
-    avalanche,
-    fantom,
-    gnosis,
-    bsc
+    optimism
     // Add more chains as needed
 ];
 

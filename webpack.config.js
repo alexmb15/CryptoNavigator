@@ -2,12 +2,10 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.mjs$/,
+                test: /\.(js|mjs)$/,
                 enforce: 'pre',
                 use: ['source-map-loader'],
-                exclude: [
-                    /node_modules\/superstruct/,
-                ],
+                exclude: /node_modules/,
             },
         ],
     },

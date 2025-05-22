@@ -2,7 +2,15 @@
 
 /* Общие стили контейнера */
 .container {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;   /* занимает всю высоту ячейки grid */
+  overflow: hidden;
+}
+
+.content {
+  flex: 1 1 auto; /* растягивается, сколько есть места */
+  overflow-y: auto;  /* вертикальный скролл именно здесь */
 }
 
 /* Стили для шапки аккаунта */

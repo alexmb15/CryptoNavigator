@@ -245,3 +245,21 @@ export const NETWORK_MAP_COINMARKETCAP: { [chainId: number]: string } = {
   338: "cronos-testnet",         // Cronos Testnet
 };
 
+/*
+export const NETWORK_MAP_COINGECKO: { [key: number]: string } = {
+  // Ethereum Mainnet and Testnets
+  1: 'ethereum',            // Ethereum Mainnet
+
+  // Binance Smart Chain (BSC)
+  56: 'binance-smart-chain', // Binance Smart Chain Mainnet
+
+  // Polygon (Matic)
+  137: 'polygon-pos',       // Polygon Mainnet
+
+  // Arbitrum
+  42161: 'arbitrum-one',    // Arbitrum One Mainnet
+
+  // Optimism
+  10: 'optimistic-ethereum', // Optimism Mainnet
+};
+* */
