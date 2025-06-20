@@ -54,7 +54,11 @@ export const getTokensInfo = (address: Address, chainId: number): ThunkType => {
             })
         );
 
-        const validTokenBalancesWithMetadata = tokenBalancesWithMetadata.filter(token => token !== null);
+        //const validTokenBalancesWithMetadata = tokenBalancesWithMetadata.filter(token => token !== null);
+        const validTokenBalancesWithMetadata = tokenBalancesWithMetadata.filter(
+            (token): token is TokenBalancesWithMetadata => token !== null
+        );
+
         dispatch(portfolioActions.setTokensBalances(validTokenBalancesWithMetadata));
     }
 }
