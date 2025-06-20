@@ -1,5 +1,6 @@
 import {TokenModel} from "./db/models/token.model";
-import { TokenMetaData } from "../shared-types";
+import {TokenMetaData} from "../types/tokenMetadata";
+
 
 export const tokenRepository = {
     async getAllTokens(): Promise<TokenMetaData[]> {

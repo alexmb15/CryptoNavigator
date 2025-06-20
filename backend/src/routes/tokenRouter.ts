@@ -1,7 +1,7 @@
 import {Router, Request, Response} from 'express';
 import {tokenRepository} from '../data/tokenRepository';
-import {TokenMetaData} from '../shared-types';
 import {param, query, validationResult} from 'express-validator';
+import {TokenMetaData} from "../types/tokenMetadata";
 
 // Define interface for route parameters
 interface TokenParams {

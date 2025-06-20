@@ -1,5 +1,5 @@
 import {Address} from "viem";
-import {UniswapTokenMetaData} from "../../shared-types/uniswapTokenMetaData";
+import {UniswapTokenMetaData} from "../types/uniswapTokenMetaData";
 
 async function fetchCoinData(contractAddress: Address, networkId: number): Promise<UniswapTokenMetaData | undefined> {
     try {

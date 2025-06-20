@@ -1,8 +1,7 @@
 {
-  "name": "my-crypto-portfolio-react",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alexmb15.github.io/CryptoNavigator/",
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.1.4",
     "@reduxjs/toolkit": "^2.2.7",
@@ -34,6 +33,7 @@
     "typescript": "^5.5.4"
   },
   "scripts": {
+    "dev": "react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
