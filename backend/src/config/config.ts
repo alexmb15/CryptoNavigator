@@ -1,11 +1,25 @@
 import * as dotenv from 'dotenv';
-
 dotenv.config();
 
 const result = dotenv.config({ path: '.env' });
 if (result.error) {
   console.error('Error loading .env file:', result.error);
 }
+
+// Destructure Mongo config for clarity
+const {
+  MONGO_USER,
+  MONGO_PASSWORD,
+  MONGO_HOST,
+  MONGO_PORT,
+  MONGO_DB,
+  MONGO_AUTH_SOURCE,
+  MONGO_TLS
+} = process.env;
+
+const mongoUri = `mongodb://${MONGO_USER}:${encodeURIComponent(
+    MONGO_PASSWORD!
+)}@${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB}?authSource=${MONGO_AUTH_SOURCE}&tls=${MONGO_TLS}`;
 
 interface Config {
   mongoUri: string;
@@ -23,7 +37,7 @@ interface Config {
 }
 
 const config: Config = {
-  mongoUri: process.env.MONGODB_URI || 'mongodb://localhost:27017/tokenindexer',
+  mongoUri,
   uniswapTokenList: process.env.UNISWAP_TOKEN_LIST_URL || 'https://tokens.uniswap.org',
   coinGeckoApiUrl: process.env.COINGECKO_API_URL || 'https://api.coingecko.com/api/v3',
   maxRetries: parseInt(process.env.MAX_RETRIES || '10', 10),
@@ -38,3 +52,4 @@ const config: Config = {
 };
 
 export default config;
+``

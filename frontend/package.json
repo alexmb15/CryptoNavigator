@@ -2,6 +2,7 @@
   "name": "my-crypto-portfolio-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alexmb15.github.io/CryptoNavigator/",
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.1.4",
     "@reduxjs/toolkit": "^2.2.7",

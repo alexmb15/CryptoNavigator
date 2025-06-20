@@ -26,3 +26,5 @@
 2024-10-16T18:38:40.388Z [INFO]: No new coins found
 2024-10-16T18:38:40.389Z [INFO]: Finished checkForNewCoins task
 2024-10-16T18:38:40.390Z [INFO]: Starting updateCoinPrices task
+2025-06-20T11:31:08.150Z [INFO]: MongoDB connection established successfully.
+2025-06-20T11:31:08.159Z [INFO]: Server running on port 53080

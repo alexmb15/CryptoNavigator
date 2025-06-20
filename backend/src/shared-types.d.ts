@@ -1,2 +1,2 @@
-export * from "../../shared-types/TokenMetaData";
-export * from "../../shared-types/uniswapTokenMetaData";
+export * from "../../frontend/shared-types/TokenMetaData";
+export * from "../../frontend/shared-types/uniswapTokenMetaData";
