@@ -7,6 +7,7 @@
     "watch": "tsc -w",
     "dev": "pnpm build && nodemon --inspect dist/server.js",
     "build": "tsc",
+    "heroku-postbuild": "tsc",
     "start": "node dist/index.js"
   },
   "dependencies": {
